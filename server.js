@@ -8,6 +8,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/djon", (req, res) => {
+  res.json({ result: "GET Vercel", status: "DJON success" });
+})
+
+app.post("/poly", (req, res) => {
+  res.json({ result: "POST Vercel", status: "POLY success" });
+})
+
 app.use((err, req, res, next) => {
   console.log("app.use  err", err);
   // const { status = 500, message = "Server error" } = err;
