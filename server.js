@@ -10,11 +10,12 @@ app.use(express.json());
 
 app.get("/djon", (req, res) => {
   res.json({ result: "GET Vercel", status: "DJON success" });
-})
+});
 
 app.post("/poly", (req, res) => {
-  res.json({ result: "POST Vercel", status: "POLY success" });
-})
+  const body = req.body
+  res.json({ result: "POST Vercel", status: "POLY success", body });
+});
 
 app.use((err, req, res, next) => {
   console.log("app.use  err", err);
